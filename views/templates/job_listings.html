@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Listings</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='joblistingsstyle.css') }}">
+</head>
+<body>
+
+    <div class="header">
+        <a href="{{ url_for('job_search') }}">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </a>
+        <div class="header-buttons">
+            <a href="{{ url_for('job_preferences') }}">
+               <button>Job Preferences</button>
+            </a>
+            <a href="{{ url_for('job_listings') }}">
+                <button>Search Jobs</button>
+            </a>
+        </div>
+    </div>
+    <h1>Job Listings</h1>
+
+    <ul>
+        {% for job_listing in job_listings %}
+            <li>
+                <h2>{{ job_listing.job_type }}</h2>
+                <p>Industry: {{ job_listing.industry }}</p>
+                <p>Country: {{ job_listing.country }}</p>
+                <p>City: {{ job_listing.city }}</p>
+                <p>Remote: {{ job_listing.remote }}</p>
+                <p>Salary: {{ job_listing.salary }}</p>
+                <p>Experience: {{ job_listing.experience }}</p>
+                <p>Posting Date: {{ job_listing.posting_date }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Preferences</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jobpreferencesstyle.css') }}">
+</head>
+<body>
+    <div class="header">
+        <a href="{{ url_for('job_search') }}">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </a>
+        <div class="header-buttons">
+            <a href="{{ url_for('job_preferences') }}">
+                <button>Job Preferences</button>
+            </a>
+            <button>Search Jobs</button>
+        </div>
+    </div>
+    <h1>Job Preferences</h1>
+
+    {% for job_search in job_searches %}
+        <ul>
+            <li>Job Type: {{ job_search.job_type }}</li>
+            <li>Industry: {{ job_search.industry }}</li>
+            <li>Country: {{ job_search.country }}</li>
+            <li>City: {{ job_search.city }}</li>
+            <li>Remote: {{ job_search.remote }}</li>
+            <li>Minimum Salary: {{ job_search.min_salary }}</li>
+            <li>Maximum Salary: {{ job_search.max_salary }}</li>
+            <li>Experience: {{ job_search.experience }}</li>
+            <li>Posting Date: {{ job_search.posting_date }}</li>
+            <form method="GET" action="{{ url_for('job_listings_by_search', job_search_id=job_search.id) }}">
+                <button type="submit">Search Jobs</button>
+            </form>
+            <form method="GET" action="{{ url_for('send_notifications', job_search_id=job_search.id) }}">
+                <button type="submit">Send Notifications</button>
+            </form>
+
+        </ul>
+    {% endfor %}
+</body>
+</html>

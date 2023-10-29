@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Job Search</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+   {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+   {% endwith %}
+
+    <div class="header">
+        <img src="static/logo.png" alt="Logo">
+        <div class="header-buttons">
+            <a href="{{ url_for('job_preferences') }}">
+               <button>Job Preferences</button>
+            </a>
+            <button>Search Jobs</button>
+        </div>
+    </div>
+    <div class="body">
+    <h1 class="centered">Look for Jobs</h1>
+    <div class="preferences">
+        <form method="POST" action="/form_validation">
+            <h2>Job Preferences</h2>
+
+            <div>
+                <label for="jobType">
+                    Job Type
+                    <select id="jobType" name="jobType">
+                        <option value="null">...</option>
+                        <option value="default">Default</option>
+                        <option value="Full Time">Full Time</option>
+                        <option value="Part Time">Part Time</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label for="industry">
+                    Industry
+                    <select id="industry" name="industry">
+                        <option value="null">...</option>
+                        <option value="default">Default</option>
+                        <option value="IT">IT</option>
+                        <option value="Healthcare">HealthCare</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Education">Education</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label for="country">
+                    Country
+                    <select id="country" name="country">
+                        <option value="null">...</option>
+                        <option value="default">Default</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                    </select>
+                </label>
+                <label for="city">
+                    City
+                    <select id="city" name="city">
+                        <option value="null">...</option>
+                        <option value="default">Default</option>
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Chittagong">Chittagong</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                        <option value="Khulna">Khulna</option>
+                        <option value="Barisal">Barisal</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label for="remote">
+                    Remote
+                    <select id="remote" name="remote">
+                        <option value="null">...</option>
+                        <option value="default">Default</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </label>
+                <label for="salary">
+                    Salary
+                    <select id="salary" name="salary">
+                        <option value="null">...</option>
+                        <option value="default">Default</option>
+                        <option value="5000-10000">5000-10000</option>
+                        <option value="10000-20000">10000-20000</option>
+                        <option value="20000-30000">20000-30000</option>
+                        <option value="30000-40000">30000-40000</option>
+                        <option value="50000-60000">50000-60000</option>
+                        <option value="70000-80000">70000-80000</option>
+                        <option value="90000-100000">90000-100000</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label for="experience">
+                    Experience
+                    <input type="text" id="experience" name="experience" placeholder="Enter years of experience">
+                </label>
+            </div>
+            <label for="postingDate">
+                Posting Date
+                <input type="date" id="postingDate" name="postingDate">
+            </label>
+
+            <div class="button-container">
+                <button type="submit">Search Jobs</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>

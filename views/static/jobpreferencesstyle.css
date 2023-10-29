@@ -1,0 +1,68 @@
+body, h1, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+.header {
+    position: absolute;
+    top: 0;
+    width: 98%;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img {
+    height: 100px;
+    max-width: 100%;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Style the h1 element */
+h1 {
+    text-align: center;
+    margin: 150px 0 30px;
+}
+
+
+ul {
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 400px;
+}
+
+
+li {
+    margin: 5px 0;
+}
+
+
+button {
+    margin: 5px;
+}
+
+
+a {
+    text-decoration: none;
+    color: #0073e6;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}

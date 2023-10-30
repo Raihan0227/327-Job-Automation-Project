@@ -1,0 +1,28 @@
+<!--# Name : Imtiaz Ahmed-->
+<!--# ID : 2013552642-->
+<!--# Project : Job Related-->
+<!--# Language : Python-->
+<!--# Framework : Flask-->
+<!--# Database : SQLALCHEMY-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SEARCH JOB PAGE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css"/>
+</head>
+<body>
+    <div class="p-3 mb-2 bg-warning text-dark"><h1> Search Jobs </h1></div>
+    <div class="p-3 mb-2 bg-danger text-white"><h3> Fill any of these boxes </h3></div>
+
+    <form method="POST" action="">
+         <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">{{ form.title }} {{ form.location }} {{ form.search }}</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        </div>
+
+    </form>
+<a href="{{ url_for('logout') }}">Log Out</a>
+</body>
+</html>
